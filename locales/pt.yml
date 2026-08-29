@@ -70,3 +70,16 @@ tools:
     measurement: 'Medidas'
     text: 'Texto'
     data: 'Dados'
+  password-generator:
+    title: Gerador de palavras-passe
+    description: Gere palavras-passe aleatórias seguras diretamente no navegador.
+    uppercase: Maiúsculas (ABC...)
+    lowercase: Minúsculas (abc...)
+    numbers: Números (123...)
+    symbols: Símbolos
+    length: Comprimento
+    passwordPlaceholder: 'A sua palavra-passe...'
+    copied: Palavra-passe copiada para a área de transferência
+    button:
+      copy: Copiar
+      refresh: Atualizar

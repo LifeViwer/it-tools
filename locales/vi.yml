@@ -381,3 +381,16 @@ tools:
   text-to-binary:
     title: Chuyển đổi văn bản thành nhị phân ASCII
     description: Chuyển đổi văn bản thành biểu diễn nhị phân ASCII của nó và ngược lại.
+  password-generator:
+    title: Trình tạo mật khẩu
+    description: Tạo mật khẩu ngẫu nhiên an toàn ngay trong trình duyệt.
+    uppercase: Chữ hoa (ABC...)
+    lowercase: Chữ thường (abc...)
+    numbers: Số (123...)
+    symbols: Ký hiệu
+    length: Độ dài
+    passwordPlaceholder: 'Mật khẩu của bạn...'
+    copied: Đã sao chép mật khẩu vào bộ nhớ tạm
+    button:
+      copy: Sao chép
+      refresh: Làm mới

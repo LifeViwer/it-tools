@@ -92,6 +92,19 @@ tools:
     button:
       copy: Копировать
       refresh: Обновить
+  password-generator:
+    title: Генератор паролей
+    description: Создавайте криптографически стойкие случайные пароли прямо в браузере.
+    uppercase: Прописные буквы (АБВ...)
+    lowercase: Строчные буквы (абв...)
+    numbers: Цифры (123...)
+    symbols: Символы
+    length: Длина
+    passwordPlaceholder: 'Ваш пароль...'
+    copied: Пароль скопирован в буфер обмена
+    button:
+      copy: Копировать
+      refresh: Обновить
   percentage-calculator:
     title: Калькулятор процентов
     description: Легко вычисляйте проценты от одного значения до другого или переводите процент в значение.

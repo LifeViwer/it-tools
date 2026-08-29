@@ -117,6 +117,19 @@ tools:
     button:
       copy: Kopieren
       refresh: Aktualisieren
+  password-generator:
+    title: Passwortgenerator
+    description: Erzeuge sichere zufällige Passwörter direkt im Browser.
+    uppercase: Großbuchstaben (ABC...)
+    lowercase: Kleinbuchstaben (abc...)
+    numbers: Zahlen (123...)
+    symbols: Symbole
+    length: Länge
+    passwordPlaceholder: 'Dein Passwort...'
+    copied: Passwort in die Zwischenablage kopiert
+    button:
+      copy: Kopieren
+      refresh: Aktualisieren
   percentage-calculator:
     title: Prozentrechner
     description: >-

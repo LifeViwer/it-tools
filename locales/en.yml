@@ -93,6 +93,19 @@ tools:
     button:
       copy: Copy
       refresh: Refresh
+  password-generator:
+    title: Password generator
+    description: Generate secure random passwords in your browser using the Web Crypto API.
+    uppercase: Uppercase (ABC...)
+    lowercase: Lowercase (abc...)
+    numbers: Numbers (123...)
+    symbols: Symbols
+    length: Length
+    passwordPlaceholder: 'Your password...'
+    copied: Password copied to the clipboard
+    button:
+      copy: Copy
+      refresh: Refresh
   percentage-calculator:
     title: Percentage calculator
     description: Easily calculate percentages from a value to another value, or from a percentage to a value.

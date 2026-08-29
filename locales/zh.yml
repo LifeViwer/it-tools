@@ -75,6 +75,20 @@ tools:
     title: 密码强度分析仪
     description: 使用此密码强度分析器和破解时间估计工具来发现密码的强度。
 
+  password-generator:
+    title: 密码生成器
+    description: 直接在浏览器中生成安全的随机密码。
+    uppercase: '大写 (ABC...)'
+    lowercase: '小写 (abc...)'
+    numbers: '数字 (123...)'
+    symbols: 符号
+    length: '长度'
+    passwordPlaceholder: '您的密码...'
+    copied: 密码已复制到剪贴板
+    button:
+      copy: 复制
+      refresh: 刷新
+
   chronometer:
     title: 计时器
     description: 监控事物的持续时间。基本上是一种具有简单计时器功能的计时器。

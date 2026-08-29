@@ -70,3 +70,16 @@ tools:
     measurement: Вимірювання
     text: Текст
     data: Дані
+  password-generator:
+    title: Генератор паролів
+    description: Створюйте криптографічно стійкі випадкові паролі прямо у браузері.
+    uppercase: Великі літери (АБВ...)
+    lowercase: Малі літери (абв...)
+    numbers: Цифри (123...)
+    symbols: Символи
+    length: Довжина
+    passwordPlaceholder: 'Ваш пароль...'
+    copied: Пароль скопійовано в буфер обміну
+    button:
+      copy: Копіювати
+      refresh: Оновити

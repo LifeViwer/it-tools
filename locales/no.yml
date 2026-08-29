@@ -75,6 +75,20 @@ tools:
     title: Analyseverktøy for passordstyrke
     description: Oppdag styrken av passordet ditt med dette kun-klient-maskin passordstyrke analyse verktøyet og se den estimerte knekketiden.
 
+  password-generator:
+    title: Passordgenerator
+    description: Generer sikre tilfeldige passord direkte i nettleseren.
+    uppercase: Store bokstaver (ABC...)
+    lowercase: Små bokstaver (abc...)
+    numbers: Siffer (123...)
+    symbols: Symboler
+    length: Lengde
+    passwordPlaceholder: 'Passordet ditt...'
+    copied: Passordet er kopiert til utklippstavlen.
+    button:
+      copy: Kopier
+      refresh: Oppdater
+
   chronometer:
     title: Kronometer
     description: Overvåk varigheten av noe. I bunn og grunn et kronometer med enkle funksjoner.

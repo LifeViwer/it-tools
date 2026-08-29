@@ -70,3 +70,16 @@ tools:
     measurement: Measurement
     text: Text
     data: Data
+  password-generator:
+    title: Generador de contraseñas
+    description: Genera contraseñas aleatorias seguras directamente en tu navegador.
+    uppercase: Mayúsculas (ABC...)
+    lowercase: Minúsculas (abc...)
+    numbers: Números (123...)
+    symbols: Símbolos
+    length: Longitud
+    passwordPlaceholder: 'Tu contraseña...'
+    copied: Contraseña copiada al portapapeles
+    button:
+      copy: Copiar
+      refresh: Actualizar

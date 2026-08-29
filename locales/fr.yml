@@ -80,3 +80,16 @@ tools:
     copied: Le token a été copié
     length: Longueur
     tokenPlaceholder: Le token...
+  password-generator:
+    title: Générateur de mots de passe
+    description: Générez des mots de passe aléatoires sécurisés directement dans votre navigateur.
+    uppercase: Majuscules (ABC...)
+    lowercase: Minuscules (abc...)
+    numbers: Chiffres (123...)
+    symbols: Symboles
+    length: Longueur
+    passwordPlaceholder: 'Votre mot de passe...'
+    copied: Mot de passe copié dans le presse-papiers
+    button:
+      copy: Copier
+      refresh: Actualiser
