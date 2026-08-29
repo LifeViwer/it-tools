@@ -9,7 +9,11 @@ describe('cyrillic transliteration', () => {
   });
 
   it('matches the iuliia GOST 7.79 system B sample', () => {
-    expect(transliterate(sample, 'gost_779_b')).toBe('Ûliâ, sʺešʹ eŝё ètih mâgkih francuzskih bulok iz Joškar-Oly, da vypej altajskogo čaû');
+    expect(transliterate(sample, 'gost_779_b')).toBe('Yuliya, s``esh` eshhyo e`tix myagkix franczuzskix bulok iz Joshkar-Oly`, da vy`pej altajskogo chayu');
+  });
+
+  it('transliterates Ч without diacritics in GOST 7.79 system B', () => {
+    expect(transliterate('Петрович', 'gost_779_b')).toBe('Petrovich');
   });
 
   it('matches the iuliia Yandex Maps sample', () => {
