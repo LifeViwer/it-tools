@@ -105,6 +105,9 @@ tools:
     button:
       copy: Копировать
       refresh: Обновить
+  cyrillic-transliteration:
+    title: Транслитерация кириллицы
+    description: Переводите кириллический текст в латиницу по схемам библиотеки iuliia.
   percentage-calculator:
     title: Калькулятор процентов
     description: Легко вычисляйте проценты от одного значения до другого или переводите процент в значение.
@@ -404,4 +407,3 @@ tools:
   text-to-binary:
     title: Текст в двоичный ASCII-код
     description: Преобразуйте текст в его двоичное ASCII-представление и обратно.
-
