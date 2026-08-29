@@ -1,30 +1,32 @@
-<picture>
-    <source srcset="./.github/logo-dark.png" media="(prefers-color-scheme: light)">
-    <source srcset="./.github/logo-white.png" media="(prefers-color-scheme: dark)">
-    <img src="./.github/logo-dark.png" alt="logo">
-</picture>
+# IT-Tools — LifeViwer fork
 
 <p align="center">
-Useful tools for developer and people working in IT. <a href="https://it-tools.tech">Try it!</a>
+  <a href="#english">EN</a> · <a href="#русский">RU</a>
 </p>
 
-## Functionalities and roadmap
+This repository is a modified fork of [IT-Tools](https://github.com/CorentinTh/it-tools). It remains free and open-source software under the GNU GPLv3.
 
-Please check the [issues](https://github.com/CorentinTh/it-tools/issues) to see if some feature listed to be implemented.
+---
 
-You have an idea of a tool? Submit a [feature request](https://github.com/CorentinTh/it-tools/issues/new/choose)!
+## English
 
-## Self host
+A collection of handy online tools for developers and people working in IT.
 
-Self host solutions for your homelab
+### Features and roadmap
 
-**From docker hub:**
+See the [issues](https://github.com/CorentinTh/it-tools/issues) for planned features and current discussions. Feature requests and bug reports are welcome in the upstream issue tracker.
+
+### Self-hosting
+
+IT-Tools can be self-hosted in a homelab or on your own server.
+
+**Docker Hub:**
 
 ```sh
 docker run -d --name it-tools --restart unless-stopped -p 8080:80 corentinth/it-tools:latest
 ```
 
-**From github packages:**
+**GitHub Container Registry:**
 
 ```sh
 docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/corentinth/it-tools:latest
@@ -36,18 +38,18 @@ docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/corent
 - [Tipi](https://www.runtipi.io/docs/apps-available)
 - [Unraid](https://unraid.net/community/apps?q=it-tools)
 
-## Contribute
+### Development
 
-### Recommended IDE Setup
+#### Recommended IDE setup
 
-[VSCode](https://code.visualstudio.com/) with the following extensions:
+[VS Code](https://code.visualstudio.com/) with:
 
-- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur)
-- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (disable Vetur)
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=vue.vscode-typescript-vue-plugin)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
 
-with the following settings:
+Recommended settings:
 
 ```json
 {
@@ -60,74 +62,184 @@ with the following settings:
 }
 ```
 
-### Type Support for `.vue` Imports in TS
+#### Type support for `.vue` imports
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+TypeScript needs additional support to understand `.vue` files. The project uses `vue-tsc` for type checking. In VS Code, install the TypeScript Vue Plugin (Volar). If the standalone plugin is not fast enough, Volar also provides Take Over Mode:
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+1. Disable the built-in **TypeScript and JavaScript Language Features** extension for the workspace.
+2. Reload the VS Code window.
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-### Project Setup
+#### Project setup
 
 ```sh
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+#### Development server
 
 ```sh
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+#### Type-check and production build
 
 ```sh
 pnpm build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+#### Unit tests
 
 ```sh
 pnpm test
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+#### End-to-end tests
+
+```sh
+pnpm test:e2e
+```
+
+#### Lint
 
 ```sh
 pnpm lint
 ```
 
-### Create a new tool
-
-To create a new tool, there is a script that generate the boilerplate of the new tool, simply run:
+#### Create a new tool
 
 ```sh
 pnpm run script:create:tool my-tool-name
 ```
 
-It will create a directory in `src/tools` with the correct files, and a the import in `src/tools/index.ts`. You will just need to add the imported tool in the proper category and develop the tool.
+The command creates the tool boilerplate in `src/tools` and adds its import to `src/tools/index.ts`.
 
-## Contributors
+### Attribution
 
-Big thanks to all the people who have already contributed!
+This fork is based on the original IT-Tools project by Corentin Thomasset and its contributors. Third-party open-source dependencies are listed in [`package.json`](package.json).
 
-[![contributors](https://contrib.rocks/image?repo=corentinth/it-tools&refresh=1)](https://github.com/corentinth/it-tools/graphs/contributors)
+Changes in this fork include Russian localization and additional developer tools. This repository is not an official project of the original IT-Tools maintainers.
 
-## Credits
+### License
 
-Coded with ❤️ by [Corentin Thomasset](https://corentin.tech?utm_source=it-tools&utm_medium=readme).
+This project is distributed under the [GNU General Public License v3.0](LICENSE).
 
-This project is continuously deployed using [vercel.com](https://vercel.com).
+This is a modified version of IT-Tools. The source code and any distributed modified version remain subject to the GPLv3 terms.
 
-Contributor graph is generated using [contrib.rocks](https://contrib.rocks/preview?repo=corentinth/it-tools).
+---
 
-<a href="https://www.producthunt.com/posts/it-tools?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-it&#0045;tools" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=345793&theme=light" alt="IT&#0032;Tools - Collection&#0032;of&#0032;handy&#0032;online&#0032;tools&#0032;for&#0032;devs&#0044;&#0032;with&#0032;great&#0032;UX | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
-<a href="https://www.producthunt.com/posts/it-tools?utm_source=badge-top-post-badge&utm_medium=badge&utm_souce=badge-it&#0045;tools" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/top-post-badge.svg?post_id=345793&theme=light&period=daily" alt="IT&#0032;Tools - Collection&#0032;of&#0032;handy&#0032;online&#0032;tools&#0032;for&#0032;devs&#0044;&#0032;with&#0032;great&#0032;UX | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+## Русский
 
-## License
+Набор полезных онлайн-инструментов для разработчиков и специалистов, работающих в сфере IT.
 
-This project is under the [GNU GPLv3](LICENSE).
+### Возможности и план развития
+
+Список планируемых возможностей и текущие обсуждения находятся в разделе [issues](https://github.com/CorentinTh/it-tools/issues). Предложения новых функций и сообщения об ошибках можно отправлять в трекер исходного проекта.
+
+### Самостоятельный хостинг
+
+IT-Tools можно развернуть в домашней лаборатории или на собственном сервере.
+
+**Docker Hub:**
+
+```sh
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 corentinth/it-tools:latest
+```
+
+**GitHub Container Registry:**
+
+```sh
+docker run -d --name it-tools --restart unless-stopped -p 8080:80 ghcr.io/corentinth/it-tools:latest
+```
+
+**Другие варианты:**
+
+- [Cloudron](https://www.cloudron.io/store/tech.ittools.cloudron.html)
+- [Tipi](https://www.runtipi.io/docs/apps-available)
+- [Unraid](https://unraid.net/community/apps?q=it-tools)
+
+### Разработка
+
+#### Рекомендуемая настройка IDE
+
+[VS Code](https://code.visualstudio.com/) со следующими расширениями:
+
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (расширение Vetur нужно отключить)
+- [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=vue.vscode-typescript-vue-plugin)
+- [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+- [i18n Ally](https://marketplace.visualstudio.com/items?itemName=lokalise.i18n-ally)
+
+Рекомендуемые настройки:
+
+```json
+{
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "i18n-ally.localesPaths": ["locales", "src/tools/*/locales"],
+  "i18n-ally.keystyle": "nested"
+}
+```
+
+#### Поддержка импорта `.vue`
+
+Для понимания файлов `.vue` TypeScript требует дополнительную поддержку. Для проверки типов проект использует `vue-tsc`. В VS Code установите TypeScript Vue Plugin (Volar). Если отдельное расширение работает недостаточно быстро, в Volar можно включить режим Take Over Mode:
+
+1. Отключите встроенное расширение **TypeScript and JavaScript Language Features** для этого рабочего пространства.
+2. Перезапустите окно VS Code.
+
+#### Подготовка проекта
+
+```sh
+pnpm install
+```
+
+#### Сервер разработки
+
+```sh
+pnpm dev
+```
+
+#### Проверка типов и production-сборка
+
+```sh
+pnpm build
+```
+
+#### Модульные тесты
+
+```sh
+pnpm test
+```
+
+#### End-to-end тесты
+
+```sh
+pnpm test:e2e
+```
+
+#### Проверка линтером
+
+```sh
+pnpm lint
+```
+
+#### Создание нового инструмента
+
+```sh
+pnpm run script:create:tool my-tool-name
+```
+
+Команда создаёт шаблон инструмента в `src/tools` и добавляет его импорт в `src/tools/index.ts`.
+
+### Атрибуция
+
+Этот форк основан на исходном проекте IT-Tools, созданном Corentin Thomasset и контрибьюторами. Список сторонних библиотек с открытым исходным кодом приведён в файле [`package.json`](package.json).
+
+Изменения форка включают русскую локализацию и дополнительные инструменты для разработчиков. Репозиторий не является официальным проектом первоначальных сопровождающих IT-Tools.
+
+### Лицензия
+
+Проект распространяется по лицензии [GNU General Public License версии 3.0](LICENSE).
+
+Это изменённая версия IT-Tools. Исходный код и распространяемые изменённые версии остаются под условиями GPLv3.
