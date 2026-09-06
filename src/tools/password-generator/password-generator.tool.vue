@@ -52,26 +52,32 @@ const hasCharacterGroup = computed(() => isPassphrase.value || withUppercase.val
         <div class="section-title">{{ t('tools.password-generator.use') }}</div>
         <div class="options-grid">
           <div>
-            <n-form-item :label="t('tools.password-generator.uppercaseWithChars')">
+            <div class="option-row">
+              <span class="option-label">{{ t('tools.password-generator.uppercaseWithChars') }}</span>
               <n-switch v-model:value="withUppercase" size="large" />
-            </n-form-item>
-            <n-form-item :label="t('tools.password-generator.lowercaseWithChars')">
+            </div>
+            <div class="option-row">
+              <span class="option-label">{{ t('tools.password-generator.lowercaseWithChars') }}</span>
               <n-switch v-model:value="withLowercase" size="large" />
-            </n-form-item>
-            <n-form-item :label="t('tools.password-generator.numbersWithChars')">
+            </div>
+            <div class="option-row">
+              <span class="option-label">{{ t('tools.password-generator.numbersWithChars') }}</span>
               <n-switch v-model:value="withNumbers" size="large" />
-            </n-form-item>
+            </div>
           </div>
           <div>
-            <n-form-item :label="t('tools.password-generator.spacesWithChars')">
+            <div class="option-row">
+              <span class="option-label">{{ t('tools.password-generator.spacesWithChars') }}</span>
               <n-switch v-model:value="withSpaces" size="large" />
-            </n-form-item>
-            <n-form-item :label="t('tools.password-generator.separatorsWithChars')">
+            </div>
+            <div class="option-row">
+              <span class="option-label">{{ t('tools.password-generator.separatorsWithChars') }}</span>
               <n-switch v-model:value="withSeparators" size="large" />
-            </n-form-item>
-            <n-form-item :label="`${t('tools.password-generator.special')} (~!@#$%^&*()+)`">
+            </div>
+            <div class="option-row">
+              <span class="option-label">{{ `${t('tools.password-generator.special')} (~!@#$%^&*()+)` }}</span>
               <n-switch v-model:value="withSpecial" size="large" />
-            </n-form-item>
+            </div>
           </div>
         </div>
         </template>
@@ -85,9 +91,10 @@ const hasCharacterGroup = computed(() => isPassphrase.value || withUppercase.val
 
       <div v-if="!isPassphrase" class="password-options">
       <div class="section-title">{{ t('tools.password-generator.doNotUse') }}</div>
-      <n-form-item :label="t('tools.password-generator.excludeAmbiguousWithChars')" label-placement="left">
+      <div class="option-row">
+        <span class="option-label">{{ t('tools.password-generator.excludeAmbiguousWithChars') }}</span>
         <n-switch v-model:value="excludeAmbiguous" size="large" class="ambiguous-switch" />
-      </n-form-item>
+      </div>
 
       <n-form-item :label="`${t('tools.password-generator.length')} (${length})`" label-placement="left">
         <n-slider v-model:value="length" :step="1" :min="4" :max="128" />
@@ -141,6 +148,26 @@ const hasCharacterGroup = computed(() => isPassphrase.value || withUppercase.val
   gap: 0 2rem;
 }
 
+.option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+  margin-bottom: 0.85rem;
+}
+
+.option-label {
+  min-width: 0;
+  flex: 1;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.option-row :deep(.n-switch) {
+  flex: 0 0 auto;
+}
+
 .charset-preview {
   margin: -0.5rem 0 0.75rem;
   color: var(--text-color-3);
@@ -177,20 +204,12 @@ const hasCharacterGroup = computed(() => isPassphrase.value || withUppercase.val
     max-width: 100%;
   }
 
-  .password-options :deep(.n-form-item) {
-    flex-direction: column;
-    align-items: stretch;
+  .option-row {
+    align-items: flex-start;
   }
 
-  .password-options :deep(.n-form-item-label) {
-    width: auto !important;
-    justify-content: flex-start;
-    margin-bottom: 0.35rem;
-    white-space: normal;
-  }
-
-  .password-options :deep(.n-form-item-blank) {
-    min-width: 0;
+  .option-row :deep(.n-switch) {
+    margin-top: 0.1rem;
   }
 }
 </style>
