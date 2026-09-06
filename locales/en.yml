@@ -104,14 +104,21 @@ tools:
     passphraseMode: Passphrases
     wordCount: Number of words
     passphrasePreview: 'Example: river-lamp-cobalt-forest'
-    uppercase: Uppercase (ABC...)
-    lowercase: Lowercase (abc...)
+    uppercase: Uppercase
+    uppercaseWithChars: Uppercase (ABCDEFGHIJKLMNOPQRSTUVWXYZ)
+    lowercase: Lowercase
+    lowercaseWithChars: Lowercase (abcdefghijklmnopqrstuvwxyz)
     numbers: Numbers
+    numbersWithChars: Numbers (0123456789)
     spaces: Space
+    spacesWithChars: Space (one space)
     spacePreview: 'one space'
     separators: Separators
+    separatorsWithChars: Separators(-_)
     special: Special characters
+    specialWithChars: Special characters
     excludeAmbiguous: Do not use ambiguous characters
+    excludeAmbiguousWithChars: 'Do not use ambiguous characters (Il1oO0оОsS5)'
     count: Number of passwords
     length: Password length
     passwordPlaceholder: 'Example password...'

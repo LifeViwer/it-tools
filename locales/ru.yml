@@ -103,14 +103,21 @@ tools:
     passphraseMode: Парольные фразы
     wordCount: Количество слов
     passphrasePreview: 'Например: river-lamp-cobalt-forest'
-    uppercase: Прописные буквы (АБВ...)
-    lowercase: Строчные буквы (абв...)
+    uppercase: Прописные буквы
+    uppercaseWithChars: Прописные буквы (ABCDEFGHIJKLMNOPQRSTUVWXYZ)
+    lowercase: Строчные буквы
+    lowercaseWithChars: Строчные буквы (abcdefghijklmnopqrstuvwxyz)
     numbers: Цифры
+    numbersWithChars: Цифры (0123456789)
     spaces: Пробел
+    spacesWithChars: Пробел (один пробел)
     spacePreview: 'один пробел'
     separators: Разделители
+    separatorsWithChars: Разделители(-_)
     special: Специальные символы
+    specialWithChars: Специальные символы
     excludeAmbiguous: Не использовать неоднозначные символы
+    excludeAmbiguousWithChars: 'Не использовать неоднозначные символы (Il1oO0оОsS5)'
     count: Количество паролей
     length: Длина пароля
     passwordPlaceholder: 'Пример пароля...'

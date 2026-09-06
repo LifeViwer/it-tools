@@ -52,32 +52,26 @@ const hasCharacterGroup = computed(() => isPassphrase.value || withUppercase.val
         <div class="section-title">{{ t('tools.password-generator.use') }}</div>
         <div class="options-grid">
           <div>
-            <n-form-item :label="t('tools.password-generator.uppercase')">
+            <n-form-item :label="t('tools.password-generator.uppercaseWithChars')">
               <n-switch v-model:value="withUppercase" size="large" />
             </n-form-item>
-            <div class="charset-preview">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
-            <n-form-item :label="t('tools.password-generator.lowercase')">
+            <n-form-item :label="t('tools.password-generator.lowercaseWithChars')">
               <n-switch v-model:value="withLowercase" size="large" />
             </n-form-item>
-            <div class="charset-preview">abcdefghijklmnopqrstuvwxyz</div>
-            <n-form-item :label="t('tools.password-generator.numbers')">
+            <n-form-item :label="t('tools.password-generator.numbersWithChars')">
               <n-switch v-model:value="withNumbers" size="large" />
             </n-form-item>
-            <div class="charset-preview">0123456789</div>
           </div>
           <div>
-            <n-form-item :label="t('tools.password-generator.spaces')">
+            <n-form-item :label="t('tools.password-generator.spacesWithChars')">
               <n-switch v-model:value="withSpaces" size="large" />
             </n-form-item>
-            <div class="charset-preview">{{ t('tools.password-generator.spacePreview') }}</div>
-            <n-form-item :label="t('tools.password-generator.separators')">
+            <n-form-item :label="t('tools.password-generator.separatorsWithChars')">
               <n-switch v-model:value="withSeparators" size="large" />
             </n-form-item>
-            <div class="charset-preview">-_</div>
-            <n-form-item :label="t('tools.password-generator.special')">
+            <n-form-item :label="`${t('tools.password-generator.special')} (~!@#$%^&*()+)`">
               <n-switch v-model:value="withSpecial" size="large" />
             </n-form-item>
-            <div class="charset-preview">~!@#$%^&amp;*()+</div>
           </div>
         </div>
         </template>
@@ -91,10 +85,9 @@ const hasCharacterGroup = computed(() => isPassphrase.value || withUppercase.val
 
       <div v-if="!isPassphrase" class="password-options">
       <div class="section-title">{{ t('tools.password-generator.doNotUse') }}</div>
-      <n-form-item :label="t('tools.password-generator.excludeAmbiguous')" label-placement="left">
+      <n-form-item :label="t('tools.password-generator.excludeAmbiguousWithChars')" label-placement="left">
         <n-switch v-model:value="excludeAmbiguous" size="large" class="ambiguous-switch" />
       </n-form-item>
-      <div class="charset-preview">Il1oO0оОsS5</div>
 
       <n-form-item :label="`${t('tools.password-generator.length')} (${length})`" label-placement="left">
         <n-slider v-model:value="length" :step="1" :min="4" :max="128" />
