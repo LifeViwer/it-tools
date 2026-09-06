@@ -99,6 +99,7 @@ tools:
     lowercase: Строчные буквы (абв...)
     numbers: Цифры (123...)
     symbols: Символы
+    excludeAmbiguous: Исключать неоднозначные символы (0/O, 1/I/l, 2/Z, 5/S, 6/G, 8/B)
     length: Длина
     passwordPlaceholder: 'Ваш пароль...'
     copied: Пароль скопирован в буфер обмена

@@ -9,6 +9,7 @@ const withUppercase = useQueryParam({ name: 'uppercase', defaultValue: true });
 const withLowercase = useQueryParam({ name: 'lowercase', defaultValue: true });
 const withNumbers = useQueryParam({ name: 'numbers', defaultValue: true });
 const withSymbols = useQueryParam({ name: 'symbols', defaultValue: true });
+const excludeAmbiguous = useQueryParam({ name: 'excludeAmbiguous', defaultValue: false });
 const { t } = useI18n();
 
 const [password, refreshPassword] = computedRefreshable(() =>
@@ -18,6 +19,7 @@ const [password, refreshPassword] = computedRefreshable(() =>
     withLowercase: withLowercase.value,
     withNumbers: withNumbers.value,
     withSymbols: withSymbols.value,
+    excludeAmbiguous: excludeAmbiguous.value,
   }),
 );
 
@@ -48,6 +50,10 @@ const hasCharacterGroup = computed(() => withUppercase.value || withLowercase.va
           </div>
         </div>
       </n-form>
+
+      <n-form-item :label="t('tools.password-generator.excludeAmbiguous')" label-placement="left">
+        <n-switch v-model:value="excludeAmbiguous" />
+      </n-form-item>
 
       <n-form-item :label="`${t('tools.password-generator.length')} (${length})`" label-placement="left">
         <n-slider v-model:value="length" :step="1" :min="4" :max="128" />

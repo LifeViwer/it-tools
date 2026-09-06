@@ -5,12 +5,16 @@ const CHARSETS = {
   symbols: '!@#$%^&*()-_=+[]{}:,.?/;',
 } as const;
 
+// Characters that are commonly confused when a password is read or typed.
+const AMBIGUOUS_CHARACTERS = '0OoiIl1|S5sZ2zB8bG6g';
+
 interface PasswordOptions {
   length?: number
   withUppercase?: boolean
   withLowercase?: boolean
   withNumbers?: boolean
   withSymbols?: boolean
+  excludeAmbiguous?: boolean
 }
 
 function randomInt(maxExclusive: number): number {
@@ -45,6 +49,7 @@ export function createPassword({
   withLowercase = true,
   withNumbers = true,
   withSymbols = true,
+  excludeAmbiguous = false,
 }: PasswordOptions = {}): string {
   if (!Number.isInteger(length) || length < 0) {
     throw new RangeError('length must be a non-negative integer');
@@ -55,7 +60,11 @@ export function createPassword({
     withLowercase ? CHARSETS.lowercase : '',
     withNumbers ? CHARSETS.numbers : '',
     withSymbols ? CHARSETS.symbols : '',
-  ].filter(Boolean);
+  ]
+    .map(charset => excludeAmbiguous
+      ? [...charset].filter(character => !AMBIGUOUS_CHARACTERS.includes(character)).join('')
+      : charset)
+    .filter(Boolean);
 
   if (length < selectedCharsets.length) {
     throw new RangeError('length is too short for the selected character groups');
@@ -76,4 +85,4 @@ export function createPassword({
   return password.join('');
 }
 
-export { CHARSETS };
+export { AMBIGUOUS_CHARACTERS, CHARSETS };

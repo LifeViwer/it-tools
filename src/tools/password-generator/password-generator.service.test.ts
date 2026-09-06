@@ -36,6 +36,12 @@ describe('password-generator', () => {
     expect(password).toMatch(/^[0-9]+$/);
   });
 
+  it('excludes visually ambiguous characters when requested', () => {
+    const password = createPassword({ length: 256, excludeAmbiguous: true });
+
+    expect(password).not.toMatch(/[0OoiIl1|S5sZ2zB8bG6g]/);
+  });
+
   it('returns an empty string when all groups are disabled', () => {
     expect(createPassword({
       length: 20,
