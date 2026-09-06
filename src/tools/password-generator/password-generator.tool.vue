@@ -183,5 +183,21 @@ const hasCharacterGroup = computed(() => isPassphrase.value || withUppercase.val
   .password-options {
     max-width: 100%;
   }
+
+  .password-options :deep(.n-form-item) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .password-options :deep(.n-form-item-label) {
+    width: auto !important;
+    justify-content: flex-start;
+    margin-bottom: 0.35rem;
+    white-space: normal;
+  }
+
+  .password-options :deep(.n-form-item-blank) {
+    min-width: 0;
+  }
 }
 </style>
