@@ -52,7 +52,12 @@ const hasCharacterGroup = computed(() => withUppercase.value || withLowercase.va
       </n-form>
 
       <n-form-item :label="t('tools.password-generator.excludeAmbiguous')" label-placement="left">
-        <n-switch v-model:value="excludeAmbiguous" />
+        <n-switch
+          v-model:value="excludeAmbiguous"
+          size="large"
+          class="ambiguous-switch"
+          :aria-label="t('tools.password-generator.excludeAmbiguous')"
+        />
       </n-form-item>
 
       <n-form-item :label="`${t('tools.password-generator.length')} (${length})`" label-placement="left">
