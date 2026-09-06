@@ -97,11 +97,15 @@ tools:
     description: Создавайте криптографически стойкие случайные пароли прямо в браузере.
     uppercase: Прописные буквы (АБВ...)
     lowercase: Строчные буквы (абв...)
-    numbers: Цифры (123...)
-    symbols: Символы
-    excludeAmbiguous: Исключать неоднозначные символы (0/O, 1/I/l, 2/Z, 5/S, 6/G, 8/B)
-    length: Длина
-    passwordPlaceholder: 'Ваш пароль...'
+    numbers: Цифры
+    spaces: Пробел
+    spacePreview: 'один пробел'
+    separators: Разделители
+    special: Специальные символы
+    excludeAmbiguous: Не использовать неоднозначные символы
+    count: Количество паролей
+    length: Длина пароля
+    passwordPlaceholder: 'Пример пароля...'
     copied: Пароль скопирован в буфер обмена
     button:
       copy: Копировать

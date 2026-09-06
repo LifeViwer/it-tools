@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { createPassword } from './password-generator.service';
+import { createPassword, createPasswords } from './password-generator.service';
 
 describe('password-generator', () => {
   beforeEach(() => {
@@ -65,5 +65,27 @@ describe('password-generator', () => {
   it('uses the Web Crypto API', () => {
     createPassword({ length: 20 });
     expect(crypto.getRandomValues).toHaveBeenCalled();
+  });
+
+  it('supports separate spaces, separators, and special character groups', () => {
+    const password = createPassword({
+      length: 32,
+      withUppercase: false,
+      withLowercase: false,
+      withNumbers: false,
+      withSymbols: false,
+      withSpaces: true,
+      withSeparators: true,
+      withSpecial: true,
+    });
+
+    expect(password).toMatch(/[ ]/);
+    expect(password).toMatch(/[-_]/);
+    expect(password).toMatch(/[~!@#$%^&*()+]/);
+  });
+
+  it('creates the requested number of passwords', () => {
+    expect(createPasswords(3, { length: 12 })).toHaveLength(3);
+    expect(createPasswords(3, { length: 12 }).every(password => password.length === 12)).toBe(true);
   });
 });

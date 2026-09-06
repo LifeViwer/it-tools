@@ -98,11 +98,15 @@ tools:
     description: Generate secure random passwords in your browser using the Web Crypto API.
     uppercase: Uppercase (ABC...)
     lowercase: Lowercase (abc...)
-    numbers: Numbers (123...)
-    symbols: Symbols
-    excludeAmbiguous: Exclude ambiguous characters (0/O, 1/I/l, 2/Z, 5/S, 6/G, 8/B)
-    length: Length
-    passwordPlaceholder: 'Your password...'
+    numbers: Numbers
+    spaces: Space
+    spacePreview: 'one space'
+    separators: Separators
+    special: Special characters
+    excludeAmbiguous: Do not use ambiguous characters
+    count: Number of passwords
+    length: Password length
+    passwordPlaceholder: 'Example password...'
     copied: Password copied to the clipboard
     button:
       copy: Copy

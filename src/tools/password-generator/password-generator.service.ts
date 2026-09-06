@@ -2,11 +2,14 @@ const CHARSETS = {
   uppercase: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
   lowercase: 'abcdefghijklmnopqrstuvwxyz',
   numbers: '0123456789',
-  symbols: '!@#$%^&*()-_=+[]{}:,.?/;',
+  spaces: ' ',
+  separators: '-_',
+  special: '~!@#$%^&*()+',
+  symbols: '~!@#$%^&*()-_=+',
 } as const;
 
 // Characters that are commonly confused when a password is read or typed.
-const AMBIGUOUS_CHARACTERS = '0OoiIl1|S5sZ2zB8bG6g';
+const AMBIGUOUS_CHARACTERS = '0OoiIl1|S5sZ2zB8bG6gоО';
 
 interface PasswordOptions {
   length?: number
@@ -14,6 +17,9 @@ interface PasswordOptions {
   withLowercase?: boolean
   withNumbers?: boolean
   withSymbols?: boolean
+  withSpaces?: boolean
+  withSeparators?: boolean
+  withSpecial?: boolean
   excludeAmbiguous?: boolean
 }
 
@@ -49,6 +55,9 @@ export function createPassword({
   withLowercase = true,
   withNumbers = true,
   withSymbols = true,
+  withSpaces = false,
+  withSeparators = false,
+  withSpecial = false,
   excludeAmbiguous = false,
 }: PasswordOptions = {}): string {
   if (!Number.isInteger(length) || length < 0) {
@@ -59,7 +68,14 @@ export function createPassword({
     withUppercase ? CHARSETS.uppercase : '',
     withLowercase ? CHARSETS.lowercase : '',
     withNumbers ? CHARSETS.numbers : '',
-    withSymbols ? CHARSETS.symbols : '',
+    withSymbols === undefined
+      ? ''
+      : withSymbols
+        ? CHARSETS.symbols
+        : '',
+    withSpaces ? CHARSETS.spaces : '',
+    withSeparators ? CHARSETS.separators : '',
+    withSpecial ? CHARSETS.special : '',
   ]
     .map(charset => excludeAmbiguous
       ? [...charset].filter(character => !AMBIGUOUS_CHARACTERS.includes(character)).join('')
@@ -83,6 +99,14 @@ export function createPassword({
 
   shuffleSecurely(password);
   return password.join('');
+}
+
+export function createPasswords(count: number, options: PasswordOptions = {}): string[] {
+  if (!Number.isInteger(count) || count < 1) {
+    throw new RangeError('count must be a positive integer');
+  }
+
+  return Array.from({ length: count }, () => createPassword(options));
 }
 
 export { AMBIGUOUS_CHARACTERS, CHARSETS };
