@@ -96,6 +96,9 @@ tools:
   password-generator:
     title: Password generator
     description: Generate secure random passwords in your browser using the Web Crypto API.
+    use: Use
+    doNotUse: Do not use
+    example: Example password
     uppercase: Uppercase (ABC...)
     lowercase: Lowercase (abc...)
     numbers: Numbers

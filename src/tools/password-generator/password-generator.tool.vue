@@ -38,6 +38,7 @@ const hasCharacterGroup = computed(() => withUppercase.value || withLowercase.va
   <div>
     <c-card>
       <n-form label-placement="left" label-width="150">
+        <div class="section-title">{{ t('tools.password-generator.use') }}</div>
         <div class="options-grid">
           <div>
             <n-form-item :label="t('tools.password-generator.uppercase')">
@@ -70,6 +71,7 @@ const hasCharacterGroup = computed(() => withUppercase.value || withLowercase.va
         </div>
       </n-form>
 
+      <div class="section-title">{{ t('tools.password-generator.doNotUse') }}</div>
       <n-form-item :label="t('tools.password-generator.excludeAmbiguous')" label-placement="left">
         <n-switch v-model:value="excludeAmbiguous" size="large" class="ambiguous-switch" />
       </n-form-item>
@@ -79,14 +81,16 @@ const hasCharacterGroup = computed(() => withUppercase.value || withLowercase.va
         <n-slider v-model:value="length" :step="1" :min="4" :max="128" />
       </n-form-item>
 
-      <c-input-text
-        :value="passwordText"
-        :placeholder="t('tools.password-generator.passwordPlaceholder')"
-        readonly
-        multiline
-        :rows="Math.min(count, 6)"
-        class="password-display"
-      />
+      <n-form-item :label="t('tools.password-generator.example')">
+        <c-input-text
+          :value="passwordText"
+          :placeholder="t('tools.password-generator.passwordPlaceholder')"
+          readonly
+          multiline
+          :rows="Math.min(count, 6)"
+          class="password-display"
+        />
+      </n-form-item>
 
       <n-form-item :label="t('tools.password-generator.count')" label-placement="left">
         <n-input-number v-model:value="count" :min="1" :max="50" />
@@ -110,6 +114,12 @@ const hasCharacterGroup = computed(() => withUppercase.value || withLowercase.va
   input {
     font-family: monospace;
   }
+}
+
+.section-title {
+  margin: 1rem 0 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 600;
 }
 
 .options-grid {
