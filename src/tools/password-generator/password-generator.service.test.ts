@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { createPassword, createPasswords } from './password-generator.service';
+import { createPassphrase, createPassphrases, createPassword, createPasswords } from './password-generator.service';
 
 describe('password-generator', () => {
   beforeEach(() => {
@@ -87,5 +87,22 @@ describe('password-generator', () => {
   it('creates the requested number of passwords', () => {
     expect(createPasswords(3, { length: 12 })).toHaveLength(3);
     expect(createPasswords(3, { length: 12 }).every(password => password.length === 12)).toBe(true);
+  });
+
+  it('creates a passphrase with the requested number of words', () => {
+    const passphrase = createPassphrase(5, '-');
+
+    expect(passphrase.split('-')).toHaveLength(5);
+    expect(passphrase).toMatch(/^[a-z]+(?:-[a-z]+){4}$/);
+  });
+
+  it('creates the requested number of passphrases', () => {
+    expect(createPassphrases(3, 4, ' ')).toHaveLength(3);
+    expect(createPassphrases(3, 4, ' ').every(passphrase => passphrase.split(' ').length === 4)).toBe(true);
+  });
+
+  it('rejects invalid passphrase options', () => {
+    expect(() => createPassphrase(0)).toThrow(new RangeError('wordCount must be a positive integer'));
+    expect(() => createPassphrase(2, null as unknown as string)).toThrow(new TypeError('separator must be a string'));
   });
 });

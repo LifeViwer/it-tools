@@ -98,6 +98,11 @@ tools:
     use: Использовать
     doNotUse: Не использовать
     example: Пример такого пароля
+    mode: Режим генерации
+    passwordMode: Пароли
+    passphraseMode: Парольные фразы
+    wordCount: Количество слов
+    passphrasePreview: 'Например: river-lamp-cobalt-forest'
     uppercase: Прописные буквы (АБВ...)
     lowercase: Строчные буквы (абв...)
     numbers: Цифры

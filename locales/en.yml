@@ -99,6 +99,11 @@ tools:
     use: Use
     doNotUse: Do not use
     example: Example password
+    mode: Generation mode
+    passwordMode: Passwords
+    passphraseMode: Passphrases
+    wordCount: Number of words
+    passphrasePreview: 'Example: river-lamp-cobalt-forest'
     uppercase: Uppercase (ABC...)
     lowercase: Lowercase (abc...)
     numbers: Numbers
